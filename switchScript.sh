@@ -33,6 +33,7 @@ mkdir -p ./SwitchSD/switch/DBI
 mkdir -p ./SwitchSD/switch/NX-Shell
 mkdir -p ./SwitchSD/switch/HB-App-Store
 mkdir -p ./SwitchSD/switch/HekateToolbox
+mkdir -p ./SwitchSD/switch/tinfoil
 mkdir -p ./SwitchSD/switch/JKSV
 mkdir -p ./SwitchSD/switch/Moonlight
 mkdir -p ./SwitchSD/switch/NXThemesInstaller
@@ -202,6 +203,12 @@ curl -sL "$download_url" -o Moonlight-Switch.nro&& {
     echo "Moonlight download\033[32m success\033[0m."
     mv Moonlight-Switch.nro ./switch/Moonlight
 } || echo "Moonlight download\033[31m failed\033[0m."
+
+latest_release_info=$(curl -sL "https://tinfoil.media/repo/Tinfoil%20Self%20Installer%20%5B050000BADDAD0000%5D%5B20.0%5D%5Bv2%5D.zip")
+curl -sL "https://tinfoil.media/repo/Tinfoil%20Self%20Installer%20%5B050000BADDAD0000%5D%5B20.0%5D%5Bv2%5D.zip" -o tinfoil.zip && {
+    unzip -q tinfoil.zip -d ./switch/tinfoil
+    echo -e "Tinfoil download\\033[32m success\\033[0m."
+} || echo -e "Tinfoil download\\033[31m failed\\033[0m."
 
 latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/NX-Shell/releases/latest)
 download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NX-Shell.nro' | sed 's/"//g')
