@@ -206,7 +206,7 @@ curl -sL "$download_url" -o Moonlight-Switch.nro&& {
 
 latest_release_info=$(curl -sL "https://tinfoil.media/repo/Tinfoil%20Self%20Installer%20%5B050000BADDAD0000%5D%5B20.0%5D%5Bv2%5D.zip")
 curl -sL "https://tinfoil.media/repo/Tinfoil%20Self%20Installer%20%5B050000BADDAD0000%5D%5B20.0%5D%5Bv2%5D.zip" -o tinfoil.zip && {
-    unzip -q tinfoil.zip -d ./switch/tinfoil
+    unzip -q tinfoil.zip -d ./
     echo -e "Tinfoil download\\033[32m success\\033[0m."
 } || echo -e "Tinfoil download\\033[31m failed\\033[0m."
 
