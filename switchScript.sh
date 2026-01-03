@@ -46,7 +46,7 @@ mkdir -p ./SwitchSD/switch/.packages
 
 cd SwitchSD
 
-latest_release_info=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest)
+latest_release_info=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/tags/1.9.5)
 download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*atmosphere[^"]*.zip' | sed 's/"//g')
 curl -sL "$download_url" -o atmosphere.zip && {
     echo "atmosphere download\033[32m success\033[0m."
